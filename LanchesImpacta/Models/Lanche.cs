@@ -1,8 +1,7 @@
-﻿using LanchesImpacta.Models;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace LanchesImpacta
+namespace LanchesImpacta.Models
 {
     [Table("Lanches")]
     public class Lanche

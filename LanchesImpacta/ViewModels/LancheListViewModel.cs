@@ -1,4 +1,4 @@
-﻿using LanchesImpacta;
+﻿using LanchesImpacta.Models;
 
 namespace LanchesImpacta.ViewModels
 {
