@@ -1,7 +1,7 @@
-﻿using LanchesMac.Context;
+﻿using LanchesImpacta.Context;
 using Microsoft.EntityFrameworkCore;
 
-namespace LanchesMac.Models
+namespace LanchesImpacta.Models
 {
     public class CarrinhoCompra
     {

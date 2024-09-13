@@ -2,9 +2,9 @@
 
 #nullable disable
 
-namespace LanchesMac.Migrations
+namespace LanchesImpacta.Migrations
 {
-    public partial class LanchesImpacta : Migration
+    public partial class Estrutura : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -55,9 +55,9 @@ namespace LanchesMac.Migrations
                 {
                     CarrinhoCompraItemId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    LancheId = table.Column<int>(type: "int", nullable: true),
+                    LancheId = table.Column<int>(type: "int", nullable: false),
                     Quantidade = table.Column<int>(type: "int", nullable: false),
-                    CarrinhoCompraId = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: true)
+                    CarrinhoCompraId = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -66,7 +66,8 @@ namespace LanchesMac.Migrations
                         name: "FK_CarrinhoCompraItens_Lanches_LancheId",
                         column: x => x.LancheId,
                         principalTable: "Lanches",
-                        principalColumn: "LancheId");
+                        principalColumn: "LancheId",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(

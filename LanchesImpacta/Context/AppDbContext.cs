@@ -1,7 +1,7 @@
-﻿using LanchesMac.Models;
+﻿using LanchesImpacta.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace LanchesMac.Context
+namespace LanchesImpacta.Context
 {
     public class AppDbContext : DbContext
     {

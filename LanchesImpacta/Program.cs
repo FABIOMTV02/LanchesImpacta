@@ -1,6 +1,7 @@
+using LanchesImpacta;
 using Microsoft.AspNetCore.Hosting;
 
-namespace LanchesMac;
+namespace LanchesImpacta;
 public class Program
 {
     public static void Main(string[] args)

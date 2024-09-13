@@ -1,8 +1,8 @@
-﻿using LanchesMac.Context;
-using LanchesMac.Models;
+﻿using LanchesImpacta.Context;
+using LanchesImpacta.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace LanchesMac;
+namespace LanchesImpacta;
 public class Startup
 {
     public Startup(IConfiguration configuration)
