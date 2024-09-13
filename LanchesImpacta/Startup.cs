@@ -1,5 +1,7 @@
 ﻿using LanchesImpacta.Context;
 using LanchesImpacta.Models;
+using LanchesImpacta.Repositories.Interfaces;
+using LanchesImpacta.Repositories;
 using Microsoft.EntityFrameworkCore;
 
 namespace LanchesImpacta;
@@ -16,11 +18,14 @@ public class Startup
     {
         services.AddDbContext<AppDbContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+        services.AddTransient<ILancheRepository, LancheRepository>();
+        services.AddTransient<ICategoriaRepository, CategoriaRepository>();
         services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
         services.AddScoped(sp => CarrinhoCompra.GetCarrinho(sp));
 
         services.AddControllersWithViews();
-        
+
         services.AddMemoryCache();
         services.AddSession();
 
@@ -41,9 +46,9 @@ public class Startup
 
         app.UseStaticFiles();
         app.UseRouting();
-       
+
         app.UseSession();
-        
+
         app.UseAuthorization();
 
         app.UseEndpoints(endpoints =>
