@@ -10,7 +10,7 @@ namespace LanchesImpacta.Controllers
         private readonly ILancheRepository _lancheRepository;
         private readonly CarrinhoCompra _carrinhoCompra;
 
-        public CarrinhoCompraController(ILancheRepository lancheRepository, 
+        public CarrinhoCompraController(ILancheRepository lancheRepository,
             CarrinhoCompra carrinhoCompra)
         {
             _lancheRepository = lancheRepository;
@@ -30,12 +30,13 @@ namespace LanchesImpacta.Controllers
 
             return View(carrinhoCompraVM);
         }
+
         public IActionResult AdicionarItemNoCarrinhoCompra(int lancheId)
         {
             var lancheSelecionado = _lancheRepository.Lanches
-                                    .FirstOrDefault(p=> p.LancheId == lancheId); 
+                                    .FirstOrDefault(p => p.LancheId == lancheId);
 
-            if(lancheSelecionado != null)
+            if (lancheSelecionado != null)
             {
                 _carrinhoCompra.AdicionarAoCarrinho(lancheSelecionado);
             }
