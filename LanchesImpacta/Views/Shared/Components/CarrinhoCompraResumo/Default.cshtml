@@ -1,14 +1,8 @@
 ﻿@model CarrinhoCompraViewModel
 
-<style>
-    .cart-icon {
-        margin-left: 20px; /* Ajuste o valor conforme necessário */
-    }
-</style>
-
 @if(Model.CarrinhoCompra.CarrinhoCompraItems.Count > 0)
 {
-    <a asp-controller="CarrinhoCompra" asp-action="Index" class="cart-icon">
+    <a asp-controller="CarrinhoCompra" asp-action="Index">
         <span><img src="~/images/cart-5-16.ico" /></span>
         <span style="color:white">
             @Model.CarrinhoCompra.CarrinhoCompraItems.Count
