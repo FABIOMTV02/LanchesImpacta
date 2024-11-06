@@ -1,6 +1,7 @@
 ﻿using LanchesImpacta.Models;
 using LanchesImpacta.Repositories.Interfaces;
 using LanchesImpacta.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LanchesImpacta.Controllers
@@ -31,6 +32,7 @@ namespace LanchesImpacta.Controllers
             return View(carrinhoCompraVM);
         }
 
+        [Authorize]
         public IActionResult AdicionarItemNoCarrinhoCompra(int lancheId)
         {
             var lancheSelecionado = _lancheRepository.Lanches
@@ -43,6 +45,7 @@ namespace LanchesImpacta.Controllers
             return RedirectToAction("Index");
         }
 
+        [Authorize]
         public IActionResult RemoverItemDoCarrinhoCompra(int lancheId)
         {
             var lancheSelecionado = _lancheRepository.Lanches
